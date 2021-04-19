@@ -9,7 +9,7 @@ inventory = {
             'sticks of butter': 3
 }
 
-def removeInventoryItem(amount, item):
+def decreaseInventoryItem(amount, item):
     inventory[item] -= amount
     return inventory
 
@@ -33,7 +33,7 @@ def readCSVinventory():
         inventory = dict(filter(None, csv.reader(f)))
     print(inventory)
 
-removeInventoryItem(3, 'bananas')
+decreaseInventoryItem(3, 'bananas')
 newInventoryItem(5, 'loaves of bread')
 increaseInventoryItem(3, 'apples')
 writeToFile()

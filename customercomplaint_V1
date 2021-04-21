@@ -1,0 +1,35 @@
+#Customer Complaint System V 1.0
+#Programmer Courtney 
+#4/13/2021
+#################################
+#This program opens the custTest.txt
+#and prompts the customer to enter their information
+#along with a comment on the store.
+########################################
+
+########################################
+#For final implementation the file name should be changed to somthing else
+#For testing purposes it shall remain custTest.txt until testing is finished
+
+#prompts customer to enter information (For manager to later be able to send feedback)
+print("Please enter Name and contact info: \n")
+
+with open("custTest.txt", "a") as f:
+  f.write("\n________________________________________________________\n")
+
+  f.write(input())
+  
+  f.write("\n----------------\n")
+  f.write("\n")
+
+
+print("\n") 
+
+#prompts customer to enter comment (For manager to later be able to send feedback)
+print("Please enter your comment: \n")
+
+with open("custTest.txt", "a") as f:
+    f.write(input())
+    f.write("\n_____________________________________________\n")
+
+f.close()

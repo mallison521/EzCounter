@@ -1,28 +1,27 @@
 # an inventory structure
 import csv
 
-inventory = {
-            'apples': 2,
-            'bananas': 3,
-            'limes (lb)': 4,
-            'cookies (cases)': 6,
-            'sticks of butter': 3
-}
-
-def removeInventoryItem(amount, item):
+def decreaseInventoryItem(amount, item):
     inventory[item] -= amount
-    print(inventory)
+    if inventory[item] <= 0:
+        inventory[item] = 0
+    return inventory
 
-def addInventoryItem(amount, item):
-    inventory[str(item)] = amount
-    if inventory[str(item)] >= 0:
+def newInventoryItem(amount, item):
+    inventory[item] = 0
+    if inventory[item] == 0:
         inventory[item] += amount
-    print(inventory)
+    return inventory
+
+def increaseInventoryItem(amount,item):
+    inventory[item] += amount
+    return inventory
 
 def writeToFile():
-    f = csv.writer(open("inventory.csv", "w"))
+    f = csv.writer(open("inventory.csv", "w", newline=''))
     for key, val in inventory.items():
         f.writerow([key, val])
+
 
 def checkItemCount(item):
     for item in inventory:
@@ -32,9 +31,17 @@ def checkItemCount(item):
         elif inventory[item] > 0:
             print(item,": Item in stock! Remaining item count =", inventory[item])
             print("------------------------------------------------------------------------")
+            
+inventory = {}
+with open('inventory.csv') as f:
+    for line in f:
+        (key,val) = line.split(',')
+        inventory[key] = int(val)
 
 item = " "
 checkItemCount(item)
 removeInventoryItem(3, 'bananas')
 addInventoryItem(5, 'loaves of bread')
 writeToFile()
+
+

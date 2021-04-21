@@ -3,3 +3,4 @@ Issues:
 How do we want to sort the data?
 How large of an inventory do we need to account for?
 
+inventory.py needs to read from the csv file and create a dictionary from that file, still need to implement this

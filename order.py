@@ -24,9 +24,26 @@ pbj = {
 
 def checkIngredients(orderName):
     if orderName == "pbj":
-        if pbj.get("peanut butter") < inventory[0] and pbj.get("jelly") < inventory[1] and pbj.get("white bread") < inventory[2]
-            return True
+        if pbj.get("peanut butter") < inventory['peanut butter'] and pbj.get("jelly") < inventory['jelly'] \
+            and pbj.get("white bread") < inventory['white bread']:
+            print('you can make a pbj')
+        else:
+            print('you cant make a pbj')
 
     elif orderName == "macaroniCheese":
-        if macaroniCheese.get("elbow noodles")
+        if macaroniCheese.get("elbow noodles") < inventory['elbow noodles'] and\
+            macaroniCheese.get('cheddar cheese') < inventory['cheddar cheese'] and\
+                macaroniCheese.get('gruyere cheese') < inventory['gruyere cheese'] and\
+                    macaroniCheese.get('milk') < inventory['milk'] and\
+                        macaroniCheese.get('butter stick') < inventory['butter stick']:
+                            print('you can make mac and cheese')
+        else:
+            print('you cannot make mac and cheese')
+                        
+                
 
+print(inventory)
+checkIngredients('pbj')
+checkIngredients('macaroniCheese')
+
+# kas maybe you can add a way to change the data in the inventory csv based off the order? 

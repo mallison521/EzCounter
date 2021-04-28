@@ -1,7 +1,7 @@
 import csv
 
 inventory = {}
-with open('inventory.csv') as f:
+with open('inventoryNew.csv') as f:
     for line in f:
         (key,val) = line.split(',')
         inventory[key] = int(val)

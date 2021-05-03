@@ -19,9 +19,13 @@ def increaseInventoryItem(amount,item):
     return inventory
 
 def writeToFile():
-    f = csv.writer(open("inventory.csv", "w", newline=''))
-    for key, val in inventory.items():
-        f.writerow([key, val])
+    for i in range(0,2):
+        if i%2 == True:
+            f = csv.writer(open("inventoryOld.csv", "w", newline=''))
+        else:
+            f = csv.writer(open("inventoryNew.csv", "w", newline=''))
+        for key, val in inventory.items():
+            f.writerow([key, val])
 
 def checkItemCount(item):
     now = datetime.datetime.now()

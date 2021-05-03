@@ -136,8 +136,8 @@ checkItemCount('butter stick')
 checkItemCount('peanut butter')
 checkItemCount('jelly')
 checkItemCount('white bread')
-decreaseInventoryItem(3, 'bananas')
-increaseInventoryItem(5, 'loaves of bread')
+decreaseInventoryItem(3, 'jelly')
+increaseInventoryItem(5, 'white bread')
 
 while True:
     order = input("Would you like to add an item to your order? Y/N - ")

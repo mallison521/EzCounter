@@ -42,8 +42,5 @@ def checkIngredients(orderName):
                         
                 
 
-print(inventory)
-checkIngredients('pbj')
-checkIngredients('macaroniCheese')
 
-# kas maybe you can add a way to change the data in the inventory csv based off the order? 
+
